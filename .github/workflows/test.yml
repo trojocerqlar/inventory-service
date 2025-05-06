@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  push
+
+jobs:
+  fail-job:
+    runs-on: [ self-hosted, "development" ]
+    name: Pretend is a failing job
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Fail step
+          run: exit 1
